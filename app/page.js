@@ -1,10 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
+import { cookies } from "next/headers";
+import Trial from "./trial";
 
-export default function Home() {
+const sleep = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
+const Home = async () => {
+  await sleep(1000);
+  const newCookies = cookies();
+  console.log(newCookies.getAll());
   return (
     <div>
-      Main Page
+       Main Page
       <Link href="./pages/about">About</Link>
       <Link
         href={{
@@ -21,6 +29,8 @@ export default function Home() {
         width={300}
         height={300}
       />
+      <Trial/>
     </div>
   );
-}
+};
+export default Home;

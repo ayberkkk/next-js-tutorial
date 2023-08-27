@@ -3,3 +3,27 @@
   margin: 0;
   padding: 0;
 }
+
+ul {
+  padding: 0;
+  list-style: none !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+body {
+  background-color: #212121;
+}
+
+header .nav-item {
+  font-size: 18px;
+  color: #fff;
+  opacity: .5;
+  transition: .2s;
+}
+
+header .nav-item:hover{
+  opacity: 1;
+}
