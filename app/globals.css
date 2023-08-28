@@ -13,17 +13,31 @@ a {
   text-decoration: none !important;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff;
+}
+
+p {
+  font-size: 15px;
+  color: #fff;
+  font-weight: 500;
+}
+
 body {
-  background-color: #212121;
+  background-color: #000;
 }
 
 header .nav-item {
-  font-size: 18px;
+  font-size: 15px;
   color: #fff;
-  opacity: .5;
   transition: .2s;
 }
 
-header .nav-item:hover{
-  opacity: 1;
+header .nav-item:hover {
+  opacity: .6;
 }

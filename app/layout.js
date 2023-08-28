@@ -1,9 +1,9 @@
+import { Nunito } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.css";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./layouts/header";
 
-const inter = Inter({ subsets: ["latin"], display: "optional" });
+const nunito = Nunito({ subsets: ["latin"], display: "optional" });
 
 export const metadata = {
   title: "Learn next.JS",
@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={nunito.className}>
         <Header />
         {children}
       </body>

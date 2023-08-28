@@ -8,7 +8,7 @@ const Header = () => {
           <div className="col">
             <Image
               className="img-fluid"
-              src="next.svg"
+              src="/next.svg"
               width={100}
               height={100}
             />
