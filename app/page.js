@@ -6,6 +6,14 @@ import { redirect } from "next/navigation";
 const sleep = (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
+const fetchData1 = async () => {
+  const res = await fetch("https://restcountries.com/v3.1/name/peru");
+  return res.json();
+};
+const fetchData2 = async () => {
+  const res = await fetch("https://restcountries.com/v3.1/name/deutschland");
+  return res.json();
+};
 const Home = async () => {
   await sleep(1000);
   const newCookies = cookies();
@@ -15,6 +23,13 @@ const Home = async () => {
   if (nav1) {
     redirect("./pages/about");
   }
+
+  const data1 = fetchData1();
+  const data2 = fetchData2();
+
+  const resultData = await Promise.all([data1, data2]);
+
+  console.log(resultData, "data");
 
   return (
     <div className="container mt-5">
@@ -51,6 +66,16 @@ const Home = async () => {
         </div>
         <div className="col-12">
           <Trial />
+        </div>
+        <div className="col-lg-6 col-12">
+          <div className="border">
+            <pre>{JSON.stringify(resultData[0], null, 2)}</pre>
+          </div>
+        </div>
+        <div className="col-lg-6 col-12">
+          <div className="border">
+            <pre>{JSON.stringify(resultData[1], null, 2)}</pre>
+          </div>
         </div>
       </div>
     </div>
