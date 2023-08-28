@@ -1,9 +1,13 @@
-import { Nunito } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.css";
 import "./globals.css";
 import Header from "./layouts/header";
 
-const nunito = Nunito({ subsets: ["latin"], display: "optional" });
+const roboto = Roboto({
+  subsets: ["latin"],
+  display: "optional",
+  weight: "400",
+});
 
 export const metadata = {
   title: "Learn next.JS",
@@ -13,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={nunito.className}>
+      <body className={roboto.className}>
         <Header />
         {children}
       </body>

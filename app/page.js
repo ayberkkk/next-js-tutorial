@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Trial from "./trial";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 const sleep = (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -9,6 +10,12 @@ const Home = async () => {
   await sleep(1000);
   const newCookies = cookies();
   console.log(newCookies.getAll());
+
+  let nav1 = false;
+  if (nav1) {
+    redirect("./pages/about");
+  }
+
   return (
     <div className="container mt-5">
       <div className="row">
@@ -16,7 +23,7 @@ const Home = async () => {
           <p>
             In the header area, redirects are made with the next/link feature.
             Pay attention to the path of the address you will forward to.
-            </p>
+          </p>
         </div>
         <div className="col-lg-4 col-12">
           <Image
@@ -42,7 +49,6 @@ const Home = async () => {
             </li>
           </ul>
         </div>
-
         <div className="col-12">
           <Trial />
         </div>

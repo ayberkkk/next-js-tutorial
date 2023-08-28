@@ -1,12 +1,19 @@
+"use client"
 import React from "react";
+import { useSearchParams,usePathname } from "next/navigation";
 
 const Page = () => {
+  const searchParams = useSearchParams();
+  const pathname = usePathname()
+  const name = searchParams.get("name");
+  console.log(name);
   return (
     <div className="container mt-5">
       <div className="row">
         <div className="col-12">
           <h5>About Page</h5>
         </div>
+        <p>Current pathname: {pathname}</p>
         <div className="col-12">
           <p>
             Next.js is a JavaScript framework based on React. It provides a
